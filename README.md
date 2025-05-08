@@ -9,9 +9,8 @@ Currently, this integration supports **read-only actions**, allowing your AI to 
 Leverage your AI assistant to interact with your Tekmetric data:
 
 - **📅 Check Appointment Details:** "What are the details for the appointment scheduled for tomorrow?"
-- **🚗 Retrieve Vehicle Information:** "Find the service history for license plate ABC-123."
+- **🚗 Retrieve Shop Information:** "Find the contact information of a Shop."
 - **📊 Get Repair Order Status:** "What is the current status of repair order #12345?"
-- **📦 Look up Parts:** "Search for part number XYZ in inventory."
 
 ![image](https://github.com/user-attachments/assets/b1140b51-0d0e-46e8-b77a-b4a687780555)
 
