@@ -13,6 +13,8 @@ Leverage your AI assistant to interact with your Tekmetric data:
 - **📊 Get Repair Order Status:** "What is the current status of repair order #12345?"
 - **📦 Look up Parts:** "Search for part number XYZ in inventory."
 
+![image](https://github.com/user-attachments/assets/b1140b51-0d0e-46e8-b77a-b4a687780555)
+
 ## Quick Start Guide
 
 Follow these steps to get the MCP Tekmetric server up and running:
