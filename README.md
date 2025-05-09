@@ -14,52 +14,77 @@ Leverage your AI assistant to interact with your Tekmetric data:
 
 ![image](https://github.com/user-attachments/assets/b1140b51-0d0e-46e8-b77a-b4a687780555)
 
-## Quick Start Guide
+---
 
-Follow these steps to get the MCP Tekmetric server up and running:
+## 🔐 Authentication Setup
 
-### 1. Authentication Setup
+You need a Tekmetric API key to authenticate with the Tekmetric API. Obtain your API key from your Tekmetric account settings.
 
-You need a Tekmetric API key to authenticate with the Tekmetric API. Obtain your API key from your Tekmetric account settings (provide link or navigation path if possible).
+Set your API key as a system environment variable:
 
-Set your API key as a system environment variable named `TEKMETRIC_API_KEY`:
-
-```
+```bash
 export TEKMETRIC_API_KEY="your_tekmetric_api_key"
 ```
 
-### 2. Installation
+---
 
-Clone this repository:
+## 🚀 Quick Start Guide
 
-```
-git clone https://github.com/patclarke/mcp-tekmetric.git
-cd mcp-tekmetric
-```
+### Option 1: Run Locally (Python)
 
-Install the required dependencies:
+1. **Clone this repository**:
 
-```
-pip install -e .
-```
+    ```bash
+    git clone https://github.com/patclarke/mcp-tekmetric.git
+    cd mcp-tekmetric
+    ```
 
-### 3. Run the MCP Server
+2. **Install dependencies**:
 
-Start the Uvicorn server:
+    ```bash
+    pip install -e .
+    ```
 
-```
-uvicorn mcp_tekmetric.servers.main:asgi_app --host 0.0.0.0 --port 8080
-```
+3. **Start the server**:
 
-This will start the MCP server, making it available for your AI assistant to connect to, typically on `http://localhost:8080`.
+    ```bash
+    uvicorn mcp_tekmetric.servers.main:asgi_app --host 0.0.0.0 --port 8080
+    ```
 
-### 4. Connect Your AI Assistant
+---
 
-(This section depends heavily on the AI assistant being used. Provide generic guidance or specific instructions for popular assistants if possible).
+### Option 2: Run with Docker
 
-For VSCode my mcp.json looks like this:
+1. **Clone this repository**:
 
-```
+    ```bash
+    git clone https://github.com/patclarke/mcp-tekmetric.git
+    cd mcp-tekmetric
+    ```
+
+2. **Build the Docker image**:
+
+    ```bash
+    docker build -t mcp-tekmetric .
+    ```
+
+3. **Run the container** (pass your Tekmetric API key):
+
+    ```bash
+    docker run -e TEKMETRIC_API_KEY=your_tekmetric_api_key -p 8080:8080 mcp-tekmetric
+    ```
+
+This will expose the server on `http://localhost:8080`.
+
+---
+
+## 🤖 Connect Your AI Assistant
+
+For VS Code Copilot or another AI assistant that supports MCP:
+
+Example `.mcp.json` config:
+
+```json
 {
   "servers": {
     "local-tekmetric": {
@@ -69,3 +94,25 @@ For VSCode my mcp.json looks like this:
   }
 }
 ```
+
+---
+
+## 🧪 Health Check
+
+To verify the server is running:
+
+```bash
+curl http://localhost:8080/healthz
+```
+
+You should see:
+
+```json
+{"status": "ok"}
+```
+
+---
+
+## 📄 License
+
+MIT License
