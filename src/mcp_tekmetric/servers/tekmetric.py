@@ -3,11 +3,9 @@
 import json
 import logging
 import os
-from typing import Annotated, Any
 
 import httpx
 from fastmcp import Context, FastMCP
-from pydantic import Field
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 
@@ -25,7 +23,7 @@ tekmetric_mcp = FastMCP(
     name="get_shops",
     tags={"tekmetric", "read"},
 )
-async def get_shops(ctx: Context[Any, None]) -> str:
+async def get_shops(ctx: Context) -> str:
     """
     Return the list of shops accessible to the provided Tekmetric API token.
 
